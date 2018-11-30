@@ -1,0 +1,48 @@
+{
+  "ingredients": [
+    {
+      "item": "Cream Cheese",
+      "quantity": "1 pound 6 ounces"
+    },
+    {
+      "item": "sugar",
+      "quantity": "10.5 ounces"
+    },
+    {
+      "item": "cornstarch",
+      "quantity": "1.25 ounces"
+    },
+    {
+      "item": "sour cream",
+      "quantity": "8 ounces"
+    },
+    {
+      "item": "eggs, Fresh",
+      "quantity": "3 each"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": "2 tablespoons"
+    }
+  ],
+  "instructions": [
+    {
+      "steps": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, eos earum hic quod laborum optio aspernatur porro dignissimos perfe"
+    },
+    {
+      "steps": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, eos e."
+    },
+    {
+      "steps": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, eos earum hic quod laborum optio aspernatur porro dignissimos perferendis. Cum."
+    },
+    {
+      "steps": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, eos earum hic quod laboru"
+    },
+    {
+      "steps": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, eos ea"
+    },
+    {
+      "steps": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, eos earum hic quod laborum optio aspernatur porro."
+    }
+  ]
+}
