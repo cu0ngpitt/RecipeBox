@@ -1,0 +1,49 @@
+<section class="recipe-image">
+  <img src="./assets/images/cheesecake.jpg" alt="Cheesecake picture">
+</section>
+
+<div class="backdrop-color"></div>
+
+<div class="container">
+  <section class="header">
+    <div class="main-title">
+      <h1 class="recipe-title">New York Cheesecake</h1>
+
+      <div class="favsIcon" [class.love]="favorite" (click)="toggleFavs()">
+        <i class="fas fa-heart fa-2x"></i>
+      </div>
+
+      <p [class.love]="favorite">I love it!</p>
+    </div>
+
+    <p class="description">Learn how to make a classical New York Style Cheesecake with this fantastic recipe.</p>
+  </section>
+
+  <section class="recipe">
+    <div class="ingredients">
+      <div class="subTitle">
+        <h2>Ingredients</h2>
+
+        <div class="selectAll">
+          <input class="selectAll" type="checkbox" [(ngModel)]="this.checked" (click)="toggleAll()">
+          Select All
+        </div>
+      </div>
+
+      <ul class="ingredient-list">
+        <li *ngFor="let list of lists; let i = index;"><input type="checkbox"  [(ngModel)]="list.checked" (click)="verifyAllChecked(i)">{{list.quantity}}<br>{{list.item}}</li>
+      </ul>
+    </div>
+
+    <div class="instructions">
+      <h2 class="subTitle">Instuctions</h2>
+
+      <ol class="instruction-list">
+        <li *ngFor="let step of steps">{{step.steps}}</li>
+      </ol>
+    </div>
+
+  </section>
+</div>
+
+<div class="footer"></div>
