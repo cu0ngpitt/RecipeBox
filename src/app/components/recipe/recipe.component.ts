@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 // Classes imports
 import { Ingredients }        from '../../ingredients';
@@ -40,30 +40,35 @@ export class RecipeComponent implements OnInit {
   }
 
   toggleAll() {
-    let length = this.lists.length;
-    let i;
-
-    this.checked = !this.checked;
-
-    if(this.checked === true) {
-      for(i=0; i<length; i++){
-        this.lists[i].checked = true;
-      }
-      this.count = length;
-    }
-
-    if(this.checked === false) {
-      for(i=0; i<length; i++){
-        this.lists[i].checked = false;
-      }
-      this.count = 0;
-    }
+    // let length = this.lists.length;
+    // let i;
+    //
+    // this.checked = !this.checked;
+    //
+    // if(this.checked === true) {
+    //   for(i=0; i<length; i++){
+    //     this.lists[i].checked = true;
+    //   }
+    //   this.count = length;
+    // }
+    //
+    // if(this.checked === false) {
+    //   for(i=0; i<length; i++){
+    //     this.lists[i].checked = false;
+    //   }
+    //   this.count = 0;
+    // }
   }
 
   verifyAllChecked(i) {
     let length = this.lists.length;
-    
-    if(this.lists[i].checked === undefined || this.lists[i].checked === false) {
+
+    // if(this.lists[i].checked = false) {
+    //   console.log(true);
+    // }
+    if(this.lists[i].checked == false) {
+    // if(this.lists[i].checked === undefined || this.lists[i].checked === false) {
+      console.log(true);
       this.lists[i].checked = true;
       this.count++;
     } else if(this.lists[i].checked === true) {
@@ -75,5 +80,22 @@ export class RecipeComponent implements OnInit {
     } else {
       this.checked = false;
     }
+  }
+
+  check(event) {
+    let length = this.lists.length;
+    let i;
+
+    if(event.target.checked) {
+      for(i=0; i<length; i++){
+         this.lists[i].checked = true;
+       }
+       this.count = length;
+     } else {
+       for(i=0; i<length; i++){
+         this.lists[i].checked = false;
+       }
+       this.count = 0;
+     }
   }
 }
