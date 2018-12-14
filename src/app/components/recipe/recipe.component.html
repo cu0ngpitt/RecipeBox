@@ -25,7 +25,7 @@
         <h2>Ingredients</h2>
 
         <div class="selectAll">
-          <input class="selectAll" type="checkbox" [(ngModel)]="selectAllButton" (click)="toggleAll()">
+          <input class="selectAll" type="checkbox" [checked]="selectAllButton" (click)="toggleAll()">
           &nbsp; Select All
         </div>
       </div>
