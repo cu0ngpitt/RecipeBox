@@ -25,7 +25,7 @@
         <h2>Ingredients</h2>
 
         <div class="selectAll">
-          <input class="selectAll" type="checkbox" #select value="true" [checked]="select == 'true'" (click)='check($event)'>
+          <input class="selectAll" type="checkbox" [(ngModel)]="selectAllButton" (click)="toggleAll()">
           <!-- <input class="selectAll" type="checkbox" [(ngModel)]="this.checked" (click)="toggleAll()"> -->
           &nbsp;Select All
           <!-- <input type="text" [testing]="message"> -->
@@ -33,9 +33,12 @@
       </div>
 
       <ul class="ingredient-list">
-        <li *ngFor="let list of lists; let i = index;"><input type="checkbox" [(ngModel)]="list.checked" (click)="verifyAllChecked(i)" >{{list.quantity}}<br>{{list.item}}</li>
+        <li>
+          <app-checkboxes *ngFor="let list of lists" [quantity]="list.quantity" [item]="list.item" [isChecked]="list.checked" (updateCheckboxes)="changeCheckboxes(list, $event)" (click)="verifyAllChecked()"></app-checkboxes>
+        </li>
       </ul>
     </div>
+    <!-- <li *ngFor="let list of lists; let i = index;"><input type="checkbox" [(ngModel)]="list.checked" (click)="verifyAllChecked(i)" >{{list.quantity}}<br>{{list.item}}</li> -->
 
     <div class="instructions">
       <h2 class="subTitle">Instuctions</h2>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // Classes imports
 import { Ingredients }        from '../../ingredients';
@@ -13,18 +13,24 @@ import { RecipeService }      from '../../services/recipe.service';
   styleUrls: ['./recipe.component.css']
 })
 export class RecipeComponent implements OnInit {
+  // Output() update = new EventEmitter();
+
   lists: Ingredients[];
   steps: Instructions[];
 
-  checked: boolean = false;
-  count = 0;
+  selectAllButton: boolean = false;
+  count: number = 0;  // to verify if all items are checked
 
-  favorite: boolean = false;//favorite button
+  favorite: boolean = false;  // favorite button
 
   constructor(public recipe: RecipeService) { }
 
   ngOnInit() {
     this.getRecipes();
+  }
+
+  onUpdate(e) {
+    console.log(e);
   }
 
   getRecipes(): void {
@@ -40,62 +46,44 @@ export class RecipeComponent implements OnInit {
   }
 
   toggleAll() {
-    // let length = this.lists.length;
-    // let i;
-    //
-    // this.checked = !this.checked;
-    //
-    // if(this.checked === true) {
-    //   for(i=0; i<length; i++){
-    //     this.lists[i].checked = true;
-    //   }
-    //   this.count = length;
-    // }
-    //
-    // if(this.checked === false) {
-    //   for(i=0; i<length; i++){
-    //     this.lists[i].checked = false;
-    //   }
-    //   this.count = 0;
-    // }
+    const length = this.lists.length;
+
+    this.selectAllButton = !this.selectAllButton;
+
+    if(this.selectAllButton) {
+      for(let i=0; i<length; i++){
+        this.lists[i].checked = true;
+      }
+      this.count = length;
+    }
+
+    if(!this.selectAllButton) {
+      for(i=0; i<length; i++){
+        this.lists[i].checked = false;
+      }
+      this.count = 0;
+    }
   }
 
-  verifyAllChecked(i) {
-    let length = this.lists.length;
-
-    // if(this.lists[i].checked = false) {
-    //   console.log(true);
-    // }
-    if(this.lists[i].checked == false) {
-    // if(this.lists[i].checked === undefined || this.lists[i].checked === false) {
-      console.log(true);
-      this.lists[i].checked = true;
-      this.count++;
-    } else if(this.lists[i].checked === true) {
-      this.count--;
-    }
+  verifyAllChecked() {
+    const length = this.lists.length;
 
     if(this.count === length) {
-      this.checked = true;
-    } else {
-      this.checked = false;
+      this.selectAllButton = true;
+    }
+    else if(this.count < length) {
+      this.selectAllButton = false;
     }
   }
 
-  check(event) {
-    let length = this.lists.length;
-    let i;
+  changeCheckboxes(list, event) {
+    list.checked = event.checked;
 
-    if(event.target.checked) {
-      for(i=0; i<length; i++){
-         this.lists[i].checked = true;
-       }
-       this.count = length;
-     } else {
-       for(i=0; i<length; i++){
-         this.lists[i].checked = false;
-       }
-       this.count = 0;
-     }
+    if(event.checked) {
+      this.count++;
+    }
+    if(!event.checked) {
+      this.count--;
+    }
   }
 }
