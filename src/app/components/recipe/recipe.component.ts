@@ -29,10 +29,6 @@ export class RecipeComponent implements OnInit {
     this.getRecipes();
   }
 
-  onUpdate(e) {
-    console.log(e);
-  }
-
   getRecipes(): void {
     this.recipe.getRecipes()
       .subscribe((data: any) => {
