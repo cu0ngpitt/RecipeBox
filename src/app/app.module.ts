@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
+import { CheckboxesComponent } from './components/recipe/checkboxes/checkboxes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RecipeComponent
+    RecipeComponent,
+    CheckboxesComponent
   ],
   imports: [
     BrowserModule,
