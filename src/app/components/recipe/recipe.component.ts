@@ -18,7 +18,7 @@ export class RecipeComponent implements OnInit {
   lists: Ingredients[];
   steps: Instructions[];
 
-  selectAllButton: boolean = false;
+  selectAllButton: boolean;
   count: number = 0;  // to verify if all items are checked
 
   favorite: boolean = false;  // favorite button
@@ -47,14 +47,14 @@ export class RecipeComponent implements OnInit {
     this.selectAllButton = !this.selectAllButton;
     console.log(this.selectAllButton);
 
-    if(this.selectAllButton === true) {
+    if(this.selectAllButton) {
       for(let i=0; i<length; i++){
         this.lists[i].checked = true;
       }
       this.count = length;
     }
 
-    if(this.selectAllButton === false) {
+    if(!this.selectAllButton) {
       for(let i=0; i<length; i++){
         this.lists[i].checked = false;
       }
