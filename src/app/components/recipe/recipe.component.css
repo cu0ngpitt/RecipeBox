@@ -107,9 +107,9 @@
   grid-template-columns: 2fr 1fr;
 }
 
-/* .selectAll {
+.selectAll {
   align-self: center;
-} */
+}
 
 .ingredient-list {
   padding-top: 15px;
