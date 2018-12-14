@@ -101,11 +101,6 @@
   transition: .5s;
 }
 
-/* Checkboxes */
-input {
-  transform: scale(1.5);
-}
-
 /* Ingredients section */
 .subTitle {
   display: grid;
@@ -123,7 +118,7 @@ input {
 .ingredient-list li {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 12fr;
+  grid-template-columns: 1fr;
   list-style: none;
   margin: 15px 0;
 }
@@ -181,8 +176,7 @@ input {
     padding-bottom: 35px;
   }
 
-  .ingredient-list {
-    display: grid;
+  .ingredient-list li {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -204,8 +198,8 @@ input {
     grid-template-columns: 1fr 2fr;
   }
 
-  .ingredient-list {
-    display: block;
+  .ingredient-list li {
+    grid-template-columns: 1fr;
   }
 
   .instructions {
