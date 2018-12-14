@@ -58,7 +58,7 @@ export class RecipeComponent implements OnInit {
     }
 
     if(!this.selectAllButton) {
-      for(i=0; i<length; i++){
+      for(let i=0; i<length; i++){
         this.lists[i].checked = false;
       }
       this.count = 0;
