@@ -2,27 +2,33 @@
   "ingredients": [
     {
       "item": "Cream Cheese",
-      "quantity": "1 pound 6 ounces"
+      "quantity": "1 pound 6 ounces",
+      "checked": false
     },
     {
       "item": "sugar",
-      "quantity": "10.5 ounces"
+      "quantity": "10.5 ounces",
+      "checked": false
     },
     {
       "item": "cornstarch",
-      "quantity": "1.25 ounces"
+      "quantity": "1.25 ounces",
+      "checked": false
     },
     {
       "item": "sour cream",
-      "quantity": "8 ounces"
+      "quantity": "8 ounces",
+      "checked": false
     },
     {
       "item": "eggs, Fresh",
-      "quantity": "3 each"
+      "quantity": "3 each",
+      "checked": false
     },
     {
       "item": "vanilla extract",
-      "quantity": "2 tablespoons"
+      "quantity": "2 tablespoons",
+      "checked": false
     }
   ],
   "instructions": [
