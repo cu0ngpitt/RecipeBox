@@ -1,3 +1,3 @@
-export class Instructions {
+export interface Instructions {
   steps: string;
 }
