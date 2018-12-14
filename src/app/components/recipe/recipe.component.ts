@@ -18,7 +18,7 @@ export class RecipeComponent implements OnInit {
   lists: Ingredients[];
   steps: Instructions[];
 
-  selectAllButton: boolean;
+  selectAllButton: boolean; //setting this variable to equal false will cause the checkbox to not work in Safari mobile
   count: number = 0;  // to verify if all items are checked
 
   favorite: boolean = false;  // favorite button
