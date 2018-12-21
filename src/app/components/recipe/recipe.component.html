@@ -32,7 +32,7 @@
 
       <ul class="ingredient-list">
         <li>
-          <app-checkboxes *ngFor="let list of lists" [quantity]="list.quantity" [item]="list.item" [isChecked]="list.checked" (updateCheckboxes)="changeCheckboxes(list, $event)" (click)="verifyAllChecked()"></app-checkboxes>
+          <app-checkboxes *ngFor="let list of lists" [recipe]="list" [isChecked]=list.checked (updateCheckboxes)="changeCheckboxes(list, $event)" (click)="verifyAllChecked()"></app-checkboxes>
         </li>
       </ul>
     </div>

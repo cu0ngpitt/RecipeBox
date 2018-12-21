@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Ingredients } from '../../../ingredients';
 
 
 @Component({
@@ -7,12 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./checkboxes.component.css']
 })
 export class CheckboxesComponent implements OnInit {
-  @Input() quantity: string;
-  @Input() item: string;
+  @Input() recipe: Ingredients;
   @Input() isChecked: boolean;
 
   @Output() updateCheckboxes = new EventEmitter;
-
 
   constructor() { }
 
@@ -22,6 +21,6 @@ export class CheckboxesComponent implements OnInit {
   checkboxChanged() {
     this.isChecked = !this.isChecked;
 
-    this.updateCheckboxes.emit({ item: this.item, checked: this.isChecked });
+    this.updateCheckboxes.emit(this.isChecked);
   }
 }

@@ -45,7 +45,6 @@ export class RecipeComponent implements OnInit {
     const length = this.lists.length;
 
     this.selectAllButton = !this.selectAllButton;
-    console.log(this.selectAllButton);
 
     if(this.selectAllButton) {
       for(let i=0; i<length; i++){
@@ -74,12 +73,12 @@ export class RecipeComponent implements OnInit {
   }
 
   changeCheckboxes(list, event) {
-    list.checked = event.checked;
+    list.checked = event;
 
-    if(event.checked) {
+    if(event) {
       this.count++;
     }
-    if(!event.checked) {
+    if(!event) {
       this.count--;
     }
   }
